@@ -9,19 +9,31 @@
     <script src="{{  url_for('static', filename='js/site.js')}}" async></script>
 </head>
 <body>
-    <h1 class="text-center">Here are the Users</h1>
-    <div class="col-4  mx-auto">
-        <table class="table table-sm table-striped table-info table-hover">
-            <thead >
-                <tr>
-                    <th>User Name</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody id="users">
+    <div class="container d-flex justify-content-evenly mt-4">
+        <div class="card col-5 border-0">
+            <h1 class="text-center mb-3">Here are the Users</h1>
+            <table class="table table-sm table-striped table-info table-hover">
+                <thead >
+                    <tr>
+                        <th>User Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody id="users">
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
+        <div class="card col-4 border-0">
+            <h1 class="text-center">Add A User</h1>
+            <form method="post" id="myForm">
+                <label for="user_name" class="form-label">Username:</label>
+                <input type="text" name="user_name" id="user_name" class="form-control"><br>
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" name="email" id="email" class="form-control">
+                <input type="submit" value="Add User" class="btn btn-dark mt-3">
+            </form>
+        </div>
     </div>
 
 
