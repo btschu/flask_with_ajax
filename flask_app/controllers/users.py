@@ -6,15 +6,13 @@ from flask import render_template, jsonify, request, redirect
 def index():
     return render_template('index.html')
 
-
 @app.route('/users')
 def users():
     return jsonify(User.get_all_json())
 
 @app.route('/create/user',methods=['POST'])
 def create_user():
-    
-    pass
-
-
+    print(request.form)
+    User.save(request.form)
+    return jsonify(message="Add a user!!!")
 
